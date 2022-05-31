@@ -1,0 +1,7 @@
+*.o
+.DS_Store
+*.swp
+a.out
+cpp08_ConMakefile
+cpp08_2
+teoria
