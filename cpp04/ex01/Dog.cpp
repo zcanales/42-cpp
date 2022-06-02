@@ -21,7 +21,7 @@ Dog::~Dog(void){
     delete _brain;
     std::cout << "(Dog) Destructor called" << std::endl;
 }
-Dog::Dog(Dog const &src) {
+Dog::Dog(Dog const &src) : Animal("Dog"){
     std::cout << "(Dog) Copy constructor called" << std::endl;
     if (this != &src)
         *this = src;
@@ -31,6 +31,7 @@ Dog::Dog(Dog const &src) {
 // ************************************************************************** //
 Dog &Dog::operator=(Dog const & raw){
     std::cout << "(Dog) Assigment operator called" << std::endl;
+    type = raw.type;
     this->_brain = raw._brain;
     return (*this);
 }

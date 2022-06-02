@@ -33,3 +33,14 @@ std::string Brain::getIdea(int idx) const {
 void    Brain::setIdea(int idx, std::string idea){
     _ideas[idx] = idea;
 }
+// ************************************************************************** //
+//                    	     	 Overload                                      //
+// ************************************************************************** //
+Brain	&Brain::operator=(const Brain &raw){
+   int i;
+
+    i = -1;
+    while (++i < 100)
+        _ideas[i] = raw._ideas[i];
+    return (*this);
+}

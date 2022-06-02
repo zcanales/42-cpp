@@ -23,6 +23,8 @@ class Brain
         ~Brain();
         std::string getIdea(int idx) const ;
         void    setIdea(int idx, std::string idea);
+        //Overload
+        Brain &operator=(Brain const & raw);
 };
 
 #endif

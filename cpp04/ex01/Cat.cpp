@@ -23,32 +23,19 @@ Cat::~Cat(void) {
     delete _brain;
     std::cout << "(Cat) Destructor called" << std::endl;
 }
-Cat::Cat(Cat const &src) : Animal("Cat") {
+Cat::Cat(Cat const &src) : Animal("Cat"), _brain(new Brain) {
     std::cout << "(Cat) Copy constructor called" << std::endl;
     if (this != &src)
-    {
-        type = src.getType();
-        _brain = new Brain();
-        int i;
-        i = -1;
-        while (++i < 100)
-            _brain->setIdea(i, src._brain->getIdea(i)); 
-    }
-    
+        *this = src;
 }
 // ************************************************************************** //
 //                    	     	 Overload                                     //
 // ************************************************************************** //
 Cat &Cat::operator=(Cat const & raw){
      std::cout << "(Cat) Assigment operator" << std::endl;
-    int i;
-    
-    delete _brain;
-    _brain = new Brain();
+
     type = raw.getType();
-    i = -1;
-    while (++i < 100)
-        _brain->setIdea(i, raw._brain->getIdea(i)); 
+    *_brain = *(raw._brain);
     return (*this);
 }
 // ************************************************************************** //
