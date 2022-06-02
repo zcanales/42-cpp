@@ -21,32 +21,19 @@ Dog::~Dog(void){
     delete _brain;
     std::cout << "(Dog) Destructor called" << std::endl;
 }
-Dog::Dog(Dog const &src){
+Dog::Dog(Dog const &src) : Animal("Dog"), _brain(new Brain) {
     std::cout << "(Dog) Copy constructor called" << std::endl;
     if (this != &src)
-    {
-        type = src.getType();
-        _brain = new Brain();
-        int i;
-        i = -1;
-        while (++i < 100)
-            _brain->setIdea(i, src._brain->getIdea(i)); 
-    }
-    
+        *this = src;
 }
 // ************************************************************************** //
 //                    	     	 Overload                                     //
 // ************************************************************************** //
 Dog &Dog::operator=(Dog const & raw){
-    std::cout << "(Dog) Assigment operator called" << std::endl;
-    int i;
-    
-    delete _brain;
-    _brain = new Brain();
+     std::cout << "(Dog) Assigment operator" << std::endl;
+
     type = raw.getType();
-    i = -1;
-    while (++i < 100)
-        _brain->setIdea(i, raw._brain->getIdea(i)); 
+    *_brain = *(raw._brain);
     return (*this);
 }
 // ************************************************************************** //

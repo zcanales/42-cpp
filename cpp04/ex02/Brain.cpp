@@ -26,6 +26,17 @@ Brain::Brain(void) {
 Brain::~Brain(){
     std::cout << "(Brain) Destructor called" << std::endl;
 }
+// ************************************************************************** //
+//                    	     	 Overload                                      //
+// ************************************************************************** //
+Brain	&Brain::operator=(const Brain &raw){
+   int i;
+
+    i = -1;
+    while (++i < 100)
+        _ideas[i] = raw._ideas[i];
+    return (*this);
+}
 std::string Brain::getIdea(int idx) const {
     return (this->_ideas[idx]);
 }
