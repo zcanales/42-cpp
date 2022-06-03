@@ -21,7 +21,7 @@ class WrongAnimal
     public:
         WrongAnimal(void);
         WrongAnimal(std::string atype);
-        virtual ~WrongAnimal();
+         ~WrongAnimal();
         //Accesories
        std::string getType(void) const;
        //Actions

@@ -30,8 +30,8 @@ int main(void)
 	meta->makeSound();
 	std::cout << "-------WRONG ANIMALS-------" << std::endl;
 	const WrongAnimal* meta2 = new WrongAnimal();
-	const WrongAnimal* j2 = new WrongDog();
 	const WrongAnimal* i2 = new WrongCat();
+	const WrongAnimal* j2 = new WrongDog();
 
 	std::cout << "Animal Type: " << j2->getType() << " " <<  std::endl;
 	std::cout << "Animal Type: " << i2->getType() << " " << std::endl;

@@ -21,7 +21,7 @@ class WrongCat : public WrongAnimal{
         ~WrongCat();
         WrongCat &operator=(WrongCat const & raw);
         //Actions
-       virtual void makeSound(void) const;
+        void makeSound(void) const;
 };
 #endif
 
